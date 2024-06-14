@@ -1,0 +1,25 @@
+<style>
+    .container-games {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    .container-game {
+    background-color: blue;
+    border-radius: 6px;
+    padding: 0px 10px;
+    }
+    
+</style>
+
+
+<div class="container-games">
+    <p>The Game favorites's {{ name }}</p>
+    @for (game of games; track game.id) {
+      <div class="container-game">
+        <p (click)="fav(game.name)">{{ game.name }}</p>
+    </div>
+    }
+</div>

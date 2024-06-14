@@ -1,0 +1,28 @@
+<style>
+    .container-user {
+        margin: 10px;
+    }
+    button {
+        background-color: white;
+        color: black;
+        padding: 10px 20px;
+        margin: 10px;
+        border-radius: 6px;
+        border: none;
+        font-size: medium;
+        font-weight: bold;
+        cursor: pointer;
+    }
+</style>
+
+
+<div class="container-user">
+  @if(isLogged) {
+  <h1>Hello, {{ name }}</h1>
+  <button (click)="isLogged = false">Logout</button>
+  <p>The Game favorite's <b>{{ favGame }}</b></p>
+  <games name="{{ name }}" (addFavGame)="getFavorite($event)" />
+  } @else {
+    <button (click)="isLogged = true">Login</button>
+  }
+</div>
